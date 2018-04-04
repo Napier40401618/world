@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<style>
 		#link{
 			text-decoration: none;
@@ -27,5 +27,10 @@
 			<div>GDP (million $): <b>{{ "{:,.0f}".format(c['gdp']/1000000) }}</b></div>
 		</div>
 	</div>
+	<nav class="del_button">
+		
+		<a href="/delete/{{c.name}}">Delete</a>
+	</nav>
+
 	</body>
 </html>

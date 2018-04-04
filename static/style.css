@@ -1,5 +1,12 @@
+.center
+{
+	text-align: center;
+    border: 3px solid green;
+}
 body{
 	font-family: arial;
+
+
 }
 img{
 
@@ -19,6 +26,17 @@ img{
 	text-decoration: none;
 }
 .nav_button{
+	border: solid thin black;
+	padding: 1ex;
+	margin: 1ex;
+	width: 15ex;
+	border-radius: 0.5ex;
+	text-align: center;
+	display: inline-block;
+}
+
+.del_button
+{
 	border: solid thin black;
 	padding: 1ex;
 	margin: 1ex;

@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import json
 
 w= json.load(open("worldl.json"))
-page_size = 10
+page_size = 20
 page_number=0
 app = Flask(__name__)
 
@@ -36,5 +36,16 @@ def countryByNamepage(i):
 @app.route('/country/<i>')
 def countrypage(i):
     return render_template('country.html', c = w[int(i)])
+
+@app.route('/delete/<n>')
+def deleteCountry(n):
+    i=0
+    for c in w:
+        if c['name'] == n:
+            break
+        i = i+1    
+    del w[i]
+    return render_template('index.html', w = w[0:page_size],page_size=page_size,page_number=page_number)
+
 
 app.run(host='0.0.0.0', port=5618, debug=True)

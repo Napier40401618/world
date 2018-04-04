@@ -9,12 +9,19 @@
 	</style>
 </head>
 	<body>
-		<div align="center">
+		<div>
 		<h1>{{a}}</h1>
 		<div>There are {{length_of_cl}} countries in {{a}}</div>
 		<ul>
 			{% for c in cl %}
-			<div><a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}</a></div>
+				<ul>
+					<li>
+				<a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}
+				</a>
+				</li>
+				</ul>
+			
+		
 			{% endfor %}
 		</ul>
 	</div>
