@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<style>
+		#tiny{
+			text-decoration: none;
+		}
+	</style>
+</head>
+	<body>
+		<div align="center">
+		<h1>{{a}}</h1>
+		<div>There are {{length_of_cl}} countries in {{a}}</div>
+		<ul>
+			{% for c in cl %}
+			<div><a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}</a></div>
+			{% endfor %}
+		</ul>
+	</div>
+	</body>
+</html>

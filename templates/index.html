@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<style>
+		#tiny{
+			text-decoration: none;
+		}
+		#ti{
+			text-decoration: none;
+		}
+		#ny{
+			text-decoration: none;
+		}
+	</style>
+</head>
+	<body>
+		<div align="center">
+		<h1>World Factbook</h1>
+		<div>There are {{w|length}} countries in the world</div>
+		<ul>
+			{% for c in w %}
+			<div><a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}</a></div>
+			{% endfor %}
+		</ul>
+			<a href="/begin/{{page_number-page_size}}" id="ti"><button>Previous Page</button></a>
+			<a href="/begin/{{page_number+page_size}}" id="ny"><button>Next Page</button></a>
+	</div>
+	</body>
+</html>

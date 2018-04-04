@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="">
+	<style>
+		#link{
+			text-decoration: none;
+		}
+	</style>
+</head>
+	<body>
+		<div align="center">
+		<h1>{{c['name']}}</h1>
+		<div>
+			<div><img src="{{c['flag']}}" width="200" border="1"></div>
+		</div><br>
+		<div>
+			<div>Capital: <b>{{c['capital']}}</b></div>
+		</div>
+		<div>
+			<div>Continent: <b><a href="../continent/{{c['continent']}}" id="link">{{c['continent']}}</a></b></div>
+		</div>
+		<div>
+			<div>Population: <b>{{"{:,.0f}".format(c['population'])}}</b></div>
+		</div>
+		<div>
+			<div>GDP (million $): <b>{{ "{:,.0f}".format(c['gdp']/1000000) }}</b></div>
+		</div>
+	</div>
+	</body>
+</html>
