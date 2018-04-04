@@ -23,8 +23,13 @@
 			<div><a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}</a></div>
 			{% endfor %}
 		</ul>
+		<nav class="nav_button" >
 			<a href="/begin/{{page_number-page_size}}" id="ti"><button>Previous Page</button></a>
+		</nav>
+		<nav class="nav_button" >
 			<a href="/begin/{{page_number+page_size}}" id="ny"><button>Next Page</button></a>
+		</nav>
 	</div>
+
 	</body>
 </html>

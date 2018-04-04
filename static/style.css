@@ -1,3 +1,6 @@
+body{
+	font-family: arial;
+}
 img{
 
 	border: solid thin grey;
@@ -14,4 +17,13 @@ img{
 .tiny
 {
 	text-decoration: none;
+}
+.nav_button{
+	border: solid thin black;
+	padding: 1ex;
+	margin: 1ex;
+	width: 15ex;
+	border-radius: 0.5ex;
+	text-align: center;
+	display: inline-block;
 }
