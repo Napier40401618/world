@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 import json
 
@@ -17,7 +18,7 @@ def mainPage():
 		page_number=0,
 		page_size=page_size,
 		w = w[0:page_size],
-                Lota=lota)
+                lota=lota)
 
 @app.route('/begin/<b>')
 def beginPage(b,):
@@ -132,7 +133,6 @@ def createcountry():
 		c = c)
 
 app.run(host='0.0.0.0', port=5618, debug=True)
-
 
 
 

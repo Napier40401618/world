@@ -1,7 +1,8 @@
 body{
 	font-family:arial;
-	background-image: url(D:\world\static\flags\a.jpg);
+	background-image: url('1.jpg');
 	background-color: red;
+	background-size: cover;
 
 }
 img.tiny{
@@ -11,7 +12,15 @@ img.tiny{
 img.big {
   
 }
-
+ul#sort a:link
+{
+	
+	padding: 10px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	list-style-type: none;
+}
 .properties div div{
 	display:inline-block;
 }

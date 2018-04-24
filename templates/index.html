@@ -34,8 +34,6 @@
     font-size: 16px;
 }
 
-		
-
 	</style>
 	
     
@@ -45,10 +43,11 @@
 
 		<div align="center" class="ridge">
 		<h1>World Factbook</h1>
-		<div>
-			{% for s in Lota %}
-			<a href="/startwith/{{s}}">{{s}}</a>
+		<ul id="sort">
+			{% for s in lota %}
+				<a href="/startwith/{{s}}"><li>{{s}}</li></a>
 			{% endfor %}
+			</ul>
 		<div>There are {{w|length}} countries in this page.</div>
 		<div class="pos_left">
 		<ol>

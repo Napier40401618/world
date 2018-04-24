@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<style>
+		div.ridge{
+			border-style: ridge;
+			border-width: 2px;
+			width: 30%;
+			align-content: center;
+			max-width: 500px;
+    	
+		margin: auto;
+			
+    	background: white;
+    	padding: 10px;
+		}
+		div.pos_left{
+			position: relative;
+    	
+    	text-align:center;	
+
+    }
+
+</style>
+<body><div class="ridge">
+	<h1 align="center">World Factbook</h1>
+	
+		<form>
+		<div class="pos_left">
+			<ul id="sort">
+			{% for s in lota %}
+				<a href="/startwith/{{s}}"><li>{{s}}</li></a>
+			{% endfor %}
+			</ul>
+		</div>
+		</form>
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
