@@ -1,27 +1,38 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/static/style.css">
-	<style>
-		#tiny{
-			text-decoration: none;
-		}
-	</style>
+	<link rel='stylesheet' href='/static/style.css'>
 </head>
+<style>
+		div.ridge{
+			border-style: ridge;
+			border-width: 2px;
+			width: 30%;
+			align-content: center;
+			max-width: 500px;
+    	
+		margin: auto;
+			
+    	background: white;
+    	padding: 10px;
+		}
+		div.pos_left{
+			position: relative;
+    	
+    	text-align:center;	
+
+    }
+    </style>
 	<body>
-		<div>
+		<div  class="ridge">	
 		<h1>{{a}}</h1>
 		<div>There are {{length_of_cl}} countries in {{a}}</div>
+
 		<ul>
 			{% for c in cl %}
-				<ul>
-					<li>
-				<a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}
-				</a>
-				</li>
-				</ul>
-			
-		
+			<li><a href='/countryByName/{{c.name}}'>
+				<img src='/static/flags/{{c.tld}}.gif' class='tiny'>
+			 {{c.name}}</a></li>
 			{% endfor %}
 		</ul>
 	</div>

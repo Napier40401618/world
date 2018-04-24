@@ -1,44 +1,67 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel='stylesheet' href='/static/style.css'>
 	<style>
-		#tiny{
-			text-decoration: none;
+		div.ridge{
+			border-style: ridge;
+			border-width: 2px;
+			width: 30%;
+			align-content: center;
+			max-width: 500px;
+    	
+		margin: auto;
+			
+    	background: white;
+    	padding: 10px;
 		}
-		#ti{
-			text-decoration: none;
-		}
-		#ny{
-			text-decoration: none;
-		}
-	</style>
-</head>
-	<body>
-		<div align="" ="center">
-		<h1>World Factbook</h1>
-		<div>There are {{w|length}} countries in the world</div>
-		<ul>
-			{% for c in w %}
-			<li><a href="/countryByName/{{c.name}}" id="tiny"><img src="{{c.flag}}" width="20"> {{c.name}}</a></li>
-			{% endfor %}
-		</ul>
-		<nav class="nav_button" >
-			<a href="/begin/{{page_number-page_size}}" id="ti"><button>Previous Page</button></a>
-		</nav>
-		<nav class="nav_button" >
-			<a href="/begin/{{page_number+page_size}}" id="ny"><button>Next Page</button></a>
-		</nav>
-	</div>
-<style type="text/css">
-	
-	#delete-button
+		div.pos_left{
+			position: relative;
+    	
+    	text-align:left;	
+
+    }
+  nav.button
 {
-	border: solid thin black;
-	text-decoration: none;
-	display: inline-block;
-	text-align: center;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
-</style>
+
+		
+
+	</style>
+	
+    
+</head>
+
+	<body>
+
+		<div align="center" class="ridge">
+		<h1>World Factbook</h1>
+		<div>
+			{% for s in Lota %}
+			<a href="/startwith/{{s}}">{{s}}</a>
+			{% endfor %}
+		<div>There are {{w|length}} countries in this page.</div>
+		<div class="pos_left">
+		<ol>
+			{% for c in w %}
+			<li><a href='/countryByName/{{c.name}}'>
+				<img src='/static/flags/{{c["tld"]}}.gif' class='tiny'>
+			 {{c.name}}</a></li>
+			{% endfor %}
+		</ol>
+		</div>	
+			<a href='/begin/{{page_number-page_size}}'><input type="button" value="Previous Page"></a>
+			<a href='/createcountry'><input type="button" value="Create"> </a> 
+	
+			<a href='/begin/{{page_number+page_size}}'><input type="button" value="Next Page"></a>
+		</div>
 	</body>
 </html>

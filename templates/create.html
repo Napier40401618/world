@@ -7,7 +7,7 @@
 			border-style: ridge;
 			border-width: 2px;
 			width: 30%;
-			
+			align-content: center;
 			max-width: 500px;
     	
 		margin: auto;
@@ -17,9 +17,8 @@
 		}
 		div.pos_left{
 			position: relative;
-			text-align: left;
-   
     	
+    	text-align:center;	
 
     }
   nav.button
@@ -39,52 +38,44 @@
 	</style>
 </head>
 	<body>
-		<div  class="ridge">
-
-		<h1 >{{c['name']}}</h1>
-		<img src="/static/flags/{{c['tld']}}.gif" width="200px" align="center">
-		<br><br><br>
+		<div align="center" class="ridge">
+	   <form action='/createcountry'>
+		<h1>Create Country</h1>
 		<div class='properties'>
 
 			<div>
-				<div>Capital</div>
-				<div>{{c['capital']}}</div>
+				<div>Name</div>
+				<div><input type="text" name="name"></div>
 			</div>
-			
-			 
+			<div>
+				<div>Capital</div>
+				<div><input type="text" name="capital"></div>
+			</div>
 			<div>
 				<div>Continent</div>
-				<div><a href='../continent/{{c.continent}}'>{{c['continent']}}</a></div>
+				<div><input type="text" name="continent"></div>
 			</div>
-			
 			<div>
 				<div>Population</div>
-				<div>{{c['population']}}</div>
+				<div><input type="text" name="population"></div> 
 			</div>
-			
-			<div>
-				<div>GDP</div>
-				<div>{{c['gdp']}}</div>
-			</div>
-			
 			<div>
 				<div>Area</div>
-				<div>{{c['area']}}</div>
+				<div><input type="text" name="area"></div> 
 			</div>
-
 			<div>
-			<div>Top Level Domain</div>
-				<div>{{c['tld']}}</div>
+				<div>GDP </div>
+				<div><input type="text" name="gdp"></div>
 			</div>
+			<div>
+				<div>Top Level Domain </div>
+				<div><input type="text" name="tld"></div>
+			</div>
+		</div>
 	
-		</div>
-		<div align="center">
-		<a href='/editcountryByName/{{c.name}}'><input type="button" value="Edit"></a>
-		
-		
-		<a href='/delete/{{c.name}}'><input type="button" value="Delete"> </a> 
-
-		</div>
-</div>
+		   <br>
+		    <a href="localhost:5618"><input type='submit'></a>
+		</form>
+		 </div>
 	</body>
 </html>
