@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 import json
 
@@ -29,7 +28,7 @@ def beginPage(b,):
               
 		page_number = bn,
 		page_size = page_size
-		)
+		)	
 
 @app.route('/continent/<a>')
 def continentPage(a):
@@ -45,8 +44,8 @@ def continentPage(a):
 @app.route('/startwith/<a>')
 def firstalphabetpage(a):
 	cl = [c for c in w if c['name'][0]==a] 
-	return render_template( #pass all to continent.html page
-		'continent.html',
+	return render_template( #pass all to continentz.html page
+		'continentz.html',
 		length_of_cl = len(cl),
 		cl = cl,
 		a = a,
